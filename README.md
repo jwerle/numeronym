@@ -1,7 +1,7 @@
 numeronym
 ======
 
-Convert and/or define numeronyms from a words
+Convert and/or define numeronyms from words
 
 
 ## install
@@ -26,7 +26,7 @@ To start using numeronym, just pass it a string argument. All numeronym's create
 table
 
 ```js
-var n = require('numeronym')l
+var n = require('numeronym');
 
 console.log( n('canine') ); // k9
 console.log( n('internationalization') ); // i18n
