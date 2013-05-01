@@ -1,7 +1,7 @@
 numeronym
 ======
 
-Convert and/or define a numeronyms from a words
+Convert and/or define numeronyms from a words
 
 
 ## install
