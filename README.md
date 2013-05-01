@@ -7,13 +7,13 @@ Convert and/or define a numeronyms from a words
 ## install
 You can install it with `npm(1)`
 ### npm
-```bash
+```sh
 $ npm install numeronym
 ```
 
 or use `component(1)`
 ### component
-```bash
+```sh
 $ npm install jwerle/numeronym
 ```
 
@@ -61,6 +61,12 @@ n.lookup'k9'); // canine
 
 ## pattern syntax
 TODO ..
+
+
+## test
+```sh
+$ make test
+```
 
 ## author
 joseph werle
