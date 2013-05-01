@@ -97,6 +97,8 @@ function numeronym (word, alias) {
 	if (typeof word !== 'string')
 		throw new TypeError("expecting string");
 
+	// options object may be in the alias argument
+	var options = (typeof alias === 'object') ? alias : {}
 	// maybe they know whats best and they
 	// can set their own value, save us from working
 	if (typeof alias === 'string') {
@@ -110,8 +112,9 @@ function numeronym (word, alias) {
 
 	var original = word
 
-	// everything done in lowercase
-	word = word.toLowerCase();
+	// everything done in lowercase unless other wise stated
+	if (!options.preserve)
+		word = word.toLowerCase();
 
 	// fix white space
   word = word.replace(/\s+/g, ' ');
@@ -133,9 +136,6 @@ function numeronym (word, alias) {
 		var regex = new RegExp('\\s+'+ conjunction +'\\s+', 'g')
   	word = word.replace(regex, ' ');
   });
-  
-  // options object may be in the alias argument
-	var options = (typeof alias === 'object') ? alias : {}
 
 	// iterate over each
   numbers.map(function (number, i) {
@@ -298,6 +298,11 @@ function numeronym (word, alias) {
   word = parts.join(' ');
   // drop whitespace
   word = word.replace(/\s+/g, '');
+  // add space to space identifiers
+  word = word.replace(/%s/g, ' ');
+  word = word.replace(/%n/g, '\n');
+  word = word.replace(/%t/g, '\t');
+  word = word.replace(/%r/g, '\r');
 
   // to upper case?
   if (options.upper)
