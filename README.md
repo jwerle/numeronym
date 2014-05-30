@@ -55,7 +55,7 @@ Returns the string used to create numeronym
 ```js
 var n = require('numeronym');
 
-n.lookup'k9'); // canine
+n.lookup('k9'); // canine
 ```
 
 
